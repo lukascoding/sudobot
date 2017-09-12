@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 
 def error(bot, update, error):
-    logger.warn('Update "%s" caused error "%s"' % (update, error))
+    logger.warn('Update {0} caused error {1}'.format(update, error))
 
 
 config = configparser.ConfigParser()
@@ -107,7 +107,7 @@ def inlinequery(bot, update):
 
 
 start_handler = CommandHandler('start', start)
-execute_handler = MessageHandler([Filters.text], execute)
+execute_handler = MessageHandler(Filters.text, execute)
 
 dispatcher.add_handler(start_handler)
 dispatcher.add_handler(execute_handler)
